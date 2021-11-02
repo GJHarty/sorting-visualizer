@@ -2,7 +2,7 @@ function mergeArrays(left, right) {
     const mergedArray = [];
 
     while (left.length && right.length) {
-        mergedArray.push(left[0] > b[0] ? right.shift() : left.shift());
+        mergedArray.push(left[0] > right[0] ? right.shift() : left.shift());
     }
 
     while (left.length) {
@@ -11,14 +11,11 @@ function mergeArrays(left, right) {
     while (right.length) {
         mergedArray.push(right.shift());
     }
-
+    console.log('merged array', mergedArray);
     return mergedArray;
 }
 
-
 function mergeSort(arrayToSort) {
-    console.log('Initializing merge sort');
-
     if (arrayToSort.length < 2) {
         return arrayToSort
     }
