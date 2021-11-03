@@ -11,7 +11,6 @@ function mergeArrays(left, right) {
     while (right.length) {
         mergedArray.push(right.shift());
     }
-    console.log('merged array', mergedArray);
     return mergedArray;
 }
 

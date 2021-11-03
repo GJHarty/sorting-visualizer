@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './SortingVisualizer.css';
 import { Button } from '@mui/material';
 import mergeSort from './Algorithms/mergeSort';
+import bubbleSort from './Algorithms/bubbleSort';
 
 export default function SortingVisualizer() {
     const [arrayToSort, setArrayToSort] = useState([]);
@@ -20,14 +21,13 @@ export default function SortingVisualizer() {
     }  
 
     const testMerge = (testArray) => {
-        console.log('array to sort', testArray);
         const builtInSort = testArray.slice().sort((a, b) => a - b);
-        const customSort = mergeSort(testArray.slice());
-        console.log('test sort built in ', builtInSort);
-        console.log('test sort custom', customSort); 
+        const customMergeSort = mergeSort(testArray.slice());
+        const customBubbleSort = bubbleSort(testArray.slice());
+        console.log('bubble', customBubbleSort);
 
         for (let i in builtInSort) {
-            if (builtInSort[i] === customSort[i]) {
+            if (builtInSort[i] === customMergeSort[i] && builtInSort[i] === customBubbleSort[i]) {
                 continue;
             } else {
                 console.log('array is not sorted');
